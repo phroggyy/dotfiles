@@ -1,1 +1,6 @@
-dc=docker-compose
+alias dc=docker-compose
+alias a='php artisan'
+alias dcr='docker-compose run --rm'
+alias dex='docker exec -it'
+alias dnsmasq-restart='sudo launchctl stop homebrew.mxcl.dnsmasq && sudo launchctl start homebrew.mxcl.dnsmasq'
+alias uuid="uuidgen | tr -d - | tr -d '\n' | tr '[:upper:]' '[:lower:]'  | pbcopy && pbpaste && echo"
