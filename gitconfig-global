@@ -1,0 +1,19 @@
+[user]
+	name = Leo Sjöberg
+	email = leo.sjoberg@gmail.com
+[core]
+	quotepath = false
+	excludesfile = /Users/leosjoberg/.gitignore_global
+[push]
+	default = current
+[filter "lfs"]
+	clean = git-lfs clean %f
+	smudge = git-lfs smudge %f
+	required = true
+[alias]
+	private = config user.email \"leo.sjoberg@gmail.com\"
+	work = config user.email \"lsjoberg@intouchinsight.com\"
+	branch-name = "!git rev-parse --abbrev-ref HEAD"
+	mr = "!sh ~/.dotfiles/git-create-mr.sh"
+	fix = "!f() { EDITOR=\"sed -i -e '2,/^$/s/^pick/f/'\" git rebase -i HEAD~$1; }; f"
+	al = "! ga . && gc -m 'temp' && git fix HEAD~2"
