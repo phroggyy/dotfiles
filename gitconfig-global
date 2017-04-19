@@ -6,6 +6,13 @@
 	excludesfile = /Users/leosjoberg/.gitignore_global
 [push]
 	default = current
+[color]
+    ui = true
+
+[color "status"]
+    changed = blue
+[branch]
+    autosetupmerge = always
 [filter "lfs"]
 	clean = git-lfs clean %f
 	smudge = git-lfs smudge %f
