@@ -18,3 +18,11 @@ brew install yarn
 git config --global user.email "leo.sjoberg@gmail.com"
 git config --global user.name "Leo Sjöberg"
 git config --global push.default current    # This will make sure we automatically create the remote branch without -u for new branches
+
+# Install a reasonable version of sed
+brew install gnu-sed --with-default-names
+
+# Install Golang
+tar -C /usr/local -xzf go1.8.1.darwin-amd64.tar.gz
+# Add export PATH=$PATH:/usr/local/go/bin to zshrc
+# export GOPATH=$HOME/Code/golang
