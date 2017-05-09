@@ -1,0 +1,18 @@
+"-- Disable the Print key for MacVim.
+if has("gui_macvim")
+  macmenu &File.Print key=<nop>
+endif
+
+colorscheme facebook                                " Set the colorscheme
+set guifont=Operator_mono:h16                       " Set the default font family and size
+set macligatures                                    " Turn on ligatures when available
+set linespace=24                                    " Macvim-specific line height
+
+set guioptions-=e                                   " Turn off GUI tabs
+set guioptions-=l                                   " Turn off GUI Scrollbars
+set guioptions-=L
+set guioptions-=r
+set guioptions-=R
+
+hi LineNr guibg=bg                                  " Set the line number background color
+

@@ -1,0 +1,175 @@
+set nocompatible                                    " Use the latest vim
+
+so ~/.vim/plugins.vim
+
+let mapleader=','						            " Change the leader to a comma
+
+set noerrorbells visualbell t_vb=                   " Turn off the horrible bells
+set nobackup                                        " Turn off backup files
+set noswapfile                                      " Turn off swap files
+
+"----- Editing -----
+syntax enable                                       " Enable syntax highlighting
+set number                                          " Turn on line numbers
+set relativenumber                                  " Turn on relative line numbers
+set backspace=indent,eol,start                      " Make backspace behave like normal
+set softtabstop=4                                   " Make backspace delete spaces as though they are tabs
+set tabstop=4                                       " Show existing tabs with 4 spaces
+set shiftwidth=4                                    " When indenting use 4 spaces
+set expandtab                                       " On pressing tab, insert 4 spaces
+
+set hidden                                          " Hide buffers instead of closing them
+set nofoldenable                                    " Don't fold anything
+
+set showcmd                                         " Show incomplete commands at the bottom
+set showmode                                        " Show current mode at the bottom
+
+"----- Visuals -----
+colorscheme atom-dark-256                           " Set color scheme
+set background=dark                                 " Always prefer a dark background
+
+
+"----- Searching -----
+set hlsearch							            " Turn on search highlighting
+set incsearch							            " Turn on incremental searching
+set ignorecase                                      " Ignore case when searching
+set smartcase                                       " Ignore case if all lowercase, otherwise don't
+
+
+"----- Split Management -----
+set splitbelow                                      " Make splits default to below
+set splitright                                      " Make splits default to the right
+
+nmap <C-H> <C-W><C-H>                               " Ctrl-H to jump left in splits
+nmap <C-J> <C-W><C-J>                               " Ctrl-J to jump down in splits
+nmap <C-K> <C-W><C-K>                               " Ctrl-K to jump up in splits
+nmap <C-L> <C-W><C-L>                               " Ctrl-L to jump right in splits
+
+
+
+"----- Mappings -----
+"-- Edit .vimrc in a new tab
+nmap <Leader>ev :tabedit $MYVIMRC<cr>
+
+"-- Edit .gvimrc in a new tab
+nmap <Leader>egv :tabedit ~/.gvimrc<cr>
+
+"--- Edit plugins.vim in a new tab
+nmap <Leader>ep :tabedit ~/.vim/plugins.vim<cr>
+
+"--- Source .vimrc ---
+nmap <Leader>sv :source $MYVIMRC<cr>
+
+"-- Turn off search highlighting
+nmap <Leader><space> :nohlsearch<cr>
+
+"-- Quickly browse to any tag / symbol in the project
+nmap <Leader>f :tag<space>
+
+"-- Quickly exit insert mode with jj
+imap jj <Esc>
+
+"-- Map j and k to gj and gk to actually go down a line when it is wrapped
+nmap j gj
+nmap k gk
+
+
+"----- Plugins -----
+
+"/
+"/ Ctrl-P
+"/
+let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git'
+let g:ctrlp_match_window = 'top,order:ttb,min:1,max:30,results:30'
+let g:ctrlp_show_hidden = 1
+
+"-- CtrlP Tags
+nmap <D-p> :CtrlP<cr>
+nmap <D-r> :CtrlPBufTag<cr>
+nmap <D-e> :CtrlPMRUFiles<cr>
+
+"/
+"/ NERDTree
+"/
+let NERDTreeHijackNetrw = 0
+let NERDTreeShowHidden = 1
+
+"-- Toggle NERDTree
+nmap <D-1> :NERDTreeToggle<cr>
+
+"/
+"/ NERDCommenter
+"/
+"-- Toggle comment state of line
+nmap <D-/> :call NERDComment(0, 'toggle')<cr>
+vmap <D-/> :call NERDComment(0, 'toggle')<cr>
+
+"/
+"/ GReplace 
+"/
+set grepprg=ag
+let g:grep_cmd_opts = '--line-numbers --noheading'
+
+"/
+"/ SnipMate
+"/
+nmap <Leader>es :tabedit ~/.vim/snippets/
+let g:snippets_dir = '~/.vim/snippets'
+
+"/
+"/ Vim PHP Namespace
+"/
+function! IPhpInsertUse()
+    call PhpInsertUse()
+    call feedkeys('a',  'n')
+endfunction
+
+function! IPhpExpandClass()
+    call PhpExpandClass()
+    call feedkeys('a', 'n')
+endfunction
+
+autocmd FileType php inoremap <Leader>n <Esc>:call IPhpInsertUse()<cr>
+autocmd FileType php noremap <Leader>n :call PhpInsertUse()<cr>
+autocmd FileType php inoremap <Leader>nf <Esc>:call IPhpExpandClass()<cr>
+autocmd FileType php noremap <Leader>nf :call PhpExpandClass()<cr>
+
+"/
+"/ Easy Align
+"/
+"-- Start interactive EasyAlign in visual mode (e.g. vipga)
+xmap <Leader>a <Plug>(EasyAlign)
+
+"-- Start interactive EasyAlign for a motion/text object (e.g. gaip)
+nmap <Leader>a <Plug>(EasyAlign)
+
+"-- Align between [] on an =
+nmap <Leader>= vi[,a=
+
+"/
+"/ Syntastic
+"/
+let syntastic_stl_format = '[Syntax: %E{line:%fe }%W{#W:%w}%B{ }%E{#E:%e}]'
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 0
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+
+
+"----- Status Bar -----
+so ~/.vim/statusline.vim
+
+"----- Auto Commands -----
+"-- Auto source the ~/.vimrc file on saving
+augroup autosourcing
+    autocmd!
+    autocmd BufWritePost $MYVIMRC source %
+    autocmd BufWritePost $MYVIMRC source ~/.gvimrc
+augroup END
+
+
+"----- Make Myself Learn Vim -----
+nnoremap <Left> :echoe "Use h"<CR>
+nnoremap <Right> :echoe "Use l"<CR>
+nnoremap <Up> :echoe "Use k"<CR>
+nnoremap <Down> :echoe "Use j"<CR>

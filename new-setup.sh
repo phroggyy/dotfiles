@@ -26,3 +26,16 @@ brew install gnu-sed --with-default-names
 tar -C /usr/local -xzf go1.8.1.darwin-amd64.tar.gz
 # Add export PATH=$PATH:/usr/local/go/bin to zshrc
 # export GOPATH=$HOME/Code/golang
+
+# Setup vim
+DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+
+ln -s $DIR/vim/vimrc $HOME/.vimrc
+ln -s $DIR/vim/gvimrc $HOME/.gvimrc
+ln -s $DIR/vim/vim $HOME/.vim
+
+# Install Vundle
+git clone https://github.com/VundleVim/Vundle.vim.git $HOME/.vim/bundle/Vundle.vim
+
+# Install plugins
+vim +PluginInstall +qall
