@@ -39,3 +39,12 @@ git clone https://github.com/VundleVim/Vundle.vim.git $HOME/.vim/bundle/Vundle.v
 
 # Install plugins
 vim +PluginInstall +qall
+
+brew install koekeishiya/formulae/kwm
+brew services start kwm
+ln -s $DIR/kwm $HOME/.kwm
+
+
+
+# Install nerdbar
+git clone https://github.com/herrbischoff/nerdbar.widget $HOME/Library/Application\ Support/Übersicht/widgets/nerdbar.widget
