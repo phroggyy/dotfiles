@@ -4,6 +4,7 @@
 [core]
 	quotepath = false
 	excludesfile = /Users/leosjoberg/.gitignore_global
+	editor = /usr/bin/vim
 [push]
 	default = current
 [color]
@@ -19,8 +20,9 @@
 	required = true
 [alias]
 	private = config user.email \"leo.sjoberg@gmail.com\"
-	work = config user.email \"lsjoberg@intouchinsight.com\"
+    work = config user.email \"lsjoberg@intouchinsight.com\"
+    deca = config user.email \"leo@decahedron.io\"
 	branch-name = "!git rev-parse --abbrev-ref HEAD"
 	mr = "!sh ~/.dotfiles/git-create-mr.sh"
-	fix = "!f() { EDITOR=\"sed -i -e '2,/^$/s/^pick/f/'\" git rebase -i HEAD~$1; }; f"
+	fix = "!f() { GIT_EDITOR=\"sed -i -e '2,/^$/s/^pick/f/'\" git rebase -i HEAD~$1; }; f"
 	al = "! ga . && gc -m 'temp' && git fix HEAD~2"

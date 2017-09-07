@@ -6,4 +6,10 @@ alias dnsmasq-restart='sudo launchctl stop homebrew.mxcl.dnsmasq && sudo launchc
 alias uuid="uuidgen | tr -d - | tr -d '\n' | tr '[:upper:]' '[:lower:]'  | pbcopy && pbpaste && echo"
 alias uberconf="mvim $HOME/Library/Application\ Support/übersicht/widgets"
 
+function db() {
+    brew services $1 mysql;
+}
+
+alias gl="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
+
 uberdir="$HOME/Library/Application\ Support/übersicht/widgets"
