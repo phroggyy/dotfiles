@@ -1,3 +1,5 @@
+# Adapted from https://github.com/lukewaite/dotfiles/blob/master/git-create-mr.sh
+
 me=${1:-origin}
 branch=`git rev-parse --abbrev-ref HEAD`
 
