@@ -48,3 +48,7 @@ ln -s $DIR/kwm $HOME/.kwm
 
 # Install nerdbar
 git clone https://github.com/herrbischoff/nerdbar.widget $HOME/Library/Application\ Support/Übersicht/widgets/nerdbar.widget
+
+# Configure loopback interface startup daemon
+ln -s $DIR/com.leosjoberg.loopback-interface.plist $HOME/Library/LaunchAgents
+launchctl load $HOME/Library/LaunchAgents/com.leosjoberg.loopback-interface.plist
