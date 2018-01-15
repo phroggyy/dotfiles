@@ -7,10 +7,17 @@ alias uuid="uuidgen | tr -d - | tr -d '\n' | tr '[:upper:]' '[:lower:]'  | pbcop
 alias uuid4="uuidgen | tr -d '\n' | tr '[:upper:]' '[:lower:]' | pbcopy && pbpaste && echo"
 alias uberconf="mvim $HOME/Library/Application\ Support/übersicht/widgets"
 
+# This is an alias for php artisan make:
+function alloy() {
+    a make:$1 $2;
+}
+
+function dotfile() {
+    vim ~/.dotfiles/$1;
+}
+
 function db() {
     brew services $1 mysql;
 }
-
-alias gl="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
 
 uberdir="$HOME/Library/Application\ Support/übersicht/widgets"
