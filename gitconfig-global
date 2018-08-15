@@ -26,3 +26,4 @@
 	mr = "!sh ~/.dotfiles/git-create-mr.sh"
 	fix = "!f() { GIT_EDITOR=\"sed -i -e '2,/^$/s/^pick/f/'\" git rebase -i HEAD~$1; }; f"
 	al = "! ga . && gc -m 'temp' && git fix HEAD~2"
+    wip = "! git commit -am 'WIP' && git push -u origin"

@@ -96,10 +96,10 @@ export NVM_DIR="$HOME/.nvm"
 
 export PATH="$HOME/.yarn/bin:$PATH"
 export PATH="/usr/local/sbin:$PATH"
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 # The next line updates PATH for the Google Cloud SDK.
-if [ -f '/Users/leosjoberg/Downloads/google-cloud-sdk/path.zsh.inc' ]; then source '/Users/leosjoberg/Downloads/google-cloud-sdk/path.zsh.inc'; fi
+if [ -f '/Users/leosjoberg/google-cloud-sdk/path.zsh.inc' ]; then source '/Users/leosjoberg/google-cloud-sdk/path.zsh.inc'; fi
 
 # The next line enables shell command completion for gcloud.
-if [ -f '/Users/leosjoberg/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then source '/Users/leosjoberg/Downloads/google-cloud-sdk/completion.zsh.inc'; fi
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+if [ -f '/Users/leosjoberg/google-cloud-sdk/completion.zsh.inc' ]; then source '/Users/leosjoberg/google-cloud-sdk/completion.zsh.inc'; fi
