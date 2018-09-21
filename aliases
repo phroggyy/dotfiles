@@ -6,6 +6,14 @@ alias dnsmasq-restart='sudo launchctl stop homebrew.mxcl.dnsmasq && sudo launchc
 alias dnsmasq-conf='vim /usr/local/etc/dnsmasq.conf'
 alias uuid="uuidgen | tr -d '\n' | tr '[:upper:]' '[:lower:]' | pbcopy && pbpaste && echo"
 alias uberconf="mvim $HOME/Library/Application\ Support/übersicht/widgets"
+alias cat=bat
+alias tf=terraform
+alias k=kubectl
+alias kg="kubectl get"
+alias kd="kubectl describe"
+alias klog="kubectl logs"
+alias h=helm
+
 
 # This is an alias for php artisan make:
 function alloy() {

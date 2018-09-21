@@ -14,6 +14,8 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/mas
 # Install Yarn
 brew install yarn
 
+yarn global add gtop
+
 # Configure Git
 git config --global user.email "leo.sjoberg@gmail.com"
 git config --global user.name "Leo Sjöberg"
@@ -21,6 +23,12 @@ git config --global push.default current    # This will make sure we automatical
 
 # Install a reasonable version of sed
 brew install gnu-sed --with-default-names
+
+# Install cat with syntax highlighting
+brew install bat
+
+# Get some decent infra management going
+brew install terraform
 
 # Install Golang
 tar -C /usr/local -xzf go1.8.1.darwin-amd64.tar.gz
@@ -52,3 +60,10 @@ git clone https://github.com/herrbischoff/nerdbar.widget $HOME/Library/Applicati
 # Configure loopback interface startup daemon
 ln -s $DIR/com.leosjoberg.loopback-interface.plist $HOME/Library/LaunchAgents
 launchctl load $HOME/Library/LaunchAgents/com.leosjoberg.loopback-interface.plist
+
+# Setup wakatime
+brew install python3
+pip3 install wakatime
+git clone https://github.com/wbingli/zsh-wakatime.git ~/.oh-my-zsh/custom/plugins/zsh-wakatime
+
+brew install thefuck

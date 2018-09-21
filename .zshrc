@@ -1,5 +1,6 @@
 # If you come from bash you might have to change your $PATH.
 export GOPATH=~/Code/Go
+if [ -f '/Users/leosjoberg/google-cloud-sdk/path.zsh.inc' ]; then source '/Users/leosjoberg/google-cloud-sdk/path.zsh.inc'; fi
 export PATH=~/Library/Python/2.7/bin:~/.composer/vendor/bin:/usr/local/bin:$(go env GOPATH)/bin:/usr/local/opt/gnu-sed/libexec/gnubin:~/.spark:node_modules/.bin:$PATH
 
 # Path to your oh-my-zsh installation.
@@ -58,7 +59,7 @@ SPACESHIP_DOCKER_SHOW=false
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git z osx extract)
+plugins=(git z osx extract zsh-wakatame thefuck kubectl)
 
 source $ZSH/oh-my-zsh.sh
 source ~/.dotfiles/aliases
@@ -97,9 +98,6 @@ export NVM_DIR="$HOME/.nvm"
 export PATH="$HOME/.yarn/bin:$PATH"
 export PATH="/usr/local/sbin:$PATH"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-
-# The next line updates PATH for the Google Cloud SDK.
-if [ -f '/Users/leosjoberg/google-cloud-sdk/path.zsh.inc' ]; then source '/Users/leosjoberg/google-cloud-sdk/path.zsh.inc'; fi
 
 # The next line enables shell command completion for gcloud.
 if [ -f '/Users/leosjoberg/google-cloud-sdk/completion.zsh.inc' ]; then source '/Users/leosjoberg/google-cloud-sdk/completion.zsh.inc'; fi
