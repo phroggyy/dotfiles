@@ -67,3 +67,6 @@ pip3 install wakatime
 git clone https://github.com/wbingli/zsh-wakatime.git ~/.oh-my-zsh/custom/plugins/zsh-wakatime
 
 brew install thefuck
+
+# Install PHP
+brew install php73

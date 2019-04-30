@@ -12,7 +12,9 @@ alias k=kubectl
 alias kg="kubectl get"
 alias kd="kubectl describe"
 alias klog="kubectl logs"
+alias kex="kubectl exec -it"
 alias h=helm
+alias cleanup="docker system prune --volumes -f --all && brew update && brew upgrade && brew cleanup"
 
 
 # This is an alias for php artisan make:

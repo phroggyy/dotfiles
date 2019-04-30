@@ -1,10 +1,12 @@
 # If you come from bash you might have to change your $PATH.
 export GOPATH=~/Code/Go
 if [ -f '/Users/leosjoberg/google-cloud-sdk/path.zsh.inc' ]; then source '/Users/leosjoberg/google-cloud-sdk/path.zsh.inc'; fi
-export PATH=~/Library/Python/2.7/bin:~/.composer/vendor/bin:/usr/local/bin:$(go env GOPATH)/bin:/usr/local/opt/gnu-sed/libexec/gnubin:~/.spark:node_modules/.bin:$PATH
+export PATH=~/Library/Python/2.7/bin:~/.composer/vendor/bin:/usr/local/bin:$(go env GOPATH)/bin:/usr/local/opt/gnu-sed/libexec/gnubin:~/.spark:node_modules/.bin:$(brew --prefix php72)/bin:$PATH
 
 # Path to your oh-my-zsh installation.
 export ZSH=/Users/leosjoberg/.oh-my-zsh
+
+export KUBECONFIG=$HOME/.kube/config:$HOME/.kube/breeze-production-kubeconfig.yaml
 
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
