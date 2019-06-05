@@ -16,6 +16,9 @@ alias kex="kubectl exec -it"
 alias h=helm
 alias cleanup="docker system prune --volumes -f --all && brew update && brew upgrade && brew cleanup"
 
+function loc() {
+    (find $1 -name $2 -print0 | xargs -0 cat) | wc -l;
+}
 
 # This is an alias for php artisan make:
 function alloy() {
