@@ -103,3 +103,7 @@ export PATH="/usr/local/sbin:$PATH"
 
 # The next line enables shell command completion for gcloud.
 if [ -f '/Users/leosjoberg/google-cloud-sdk/completion.zsh.inc' ]; then source '/Users/leosjoberg/google-cloud-sdk/completion.zsh.inc'; fi
+
+eval "$(rbenv init -)"
+export PATH="/usr/local/opt/postgresql@10/bin:$PATH"
+export PATH="$HOME/.rbenv/bin:$PATH"
