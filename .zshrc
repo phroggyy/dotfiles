@@ -106,4 +106,5 @@ if [ -f '/Users/leosjoberg/google-cloud-sdk/completion.zsh.inc' ]; then source '
 
 eval "$(rbenv init -)"
 export PATH="/usr/local/opt/postgresql@10/bin:$PATH"
-export PATH="$HOME/.rbenv/bin:$PATH"
+export PATH="$HOME/.rbenv/bin:$PATH
+export PATH="/usr/local/opt/gnu-sed/libexec/gnubin:$PATH""

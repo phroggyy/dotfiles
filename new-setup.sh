@@ -70,3 +70,10 @@ brew install thefuck
 
 # Install PHP
 brew install php73
+
+git clone https://github.com/denysdovhan/spaceship-prompt.git "$ZSH_CUSTOM/themes/spaceship-prompt"
+ln -s "$ZSH_CUSTOM/themes/spaceship-prompt/spaceship.zsh-theme" "$ZSH_CUSTOM/themes/spaceship.zsh-theme"
+
+git clone git@github.com:powerline/fonts.git
+./fonts/install.sh
+rm -rf fonts
