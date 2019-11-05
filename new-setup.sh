@@ -77,3 +77,7 @@ ln -s "$ZSH_CUSTOM/themes/spaceship-prompt/spaceship.zsh-theme" "$ZSH_CUSTOM/the
 git clone git@github.com:powerline/fonts.git
 ./fonts/install.sh
 rm -rf fonts
+
+defaults write com.apple.finder AppleShowAllFiles YES
+
+brew install rbenv
