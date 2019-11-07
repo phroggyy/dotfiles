@@ -3,7 +3,7 @@
 	email = leo.sjoberg@gmail.com
 [core]
 	quotepath = false
-	excludesfile = /Users/leosjoberg/.gitignore_global
+	excludesfile = /Users/leosjoberg/.dotfiles/gitignore_global
 	editor = /usr/bin/vim
 [push]
 	default = current
@@ -28,3 +28,9 @@
 	fix = "!f() { GIT_EDITOR=\"sed -i -e '2,/^$/s/^pick/f/'\" git rebase -i HEAD~$1; }; f"
 	al = "! ga . && gc -m 'temp' && git fix 2"
     wip = "! git commit -am 'WIP' && git push -u origin"
+
+[includeIf "gitdir:~/Code/jobilla"]
+    path = ~/.dotfiles/gitconfig-work
+[url "ssh://git@gitlab.com"]
+    insteadOf = https://gitlab.com
+

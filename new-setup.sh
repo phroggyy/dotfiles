@@ -22,7 +22,7 @@ git config --global user.name "Leo Sjöberg"
 git config --global push.default current    # This will make sure we automatically create the remote branch without -u for new branches
 
 # Install a reasonable version of sed
-brew install gnu-sed --with-default-names
+brew install gnu-sed wget tree
 
 # Install cat with syntax highlighting
 brew install bat
@@ -79,5 +79,20 @@ git clone git@github.com:powerline/fonts.git
 rm -rf fonts
 
 defaults write com.apple.finder AppleShowAllFiles YES
+defaults write com.apple.finder CreateDesktop false
+
 
 brew install rbenv
+
+curl https://sdk.cloud.google.com | bash
+
+# This is pretty stupid, but we need to install Java in order to
+# supply OTF fonts of different weights to IntelliJ IDEs. This
+# is required so that we can enjoy fonts like Operator Mono.
+#
+# http://www.sticksnglue.com/source-code-pro-phpstorm-the-plot-thickens/
+brew cask install java
+
+# install protobuf compiler
+wget https://github.com/protocolbuffers/protobuf/releases/download/v3.10.1/protoc-3.10.1-osx-x86_64.zip
+unzip protoc-3.10.1-osx-x86_64.zip bin/protoc -d /usr/local

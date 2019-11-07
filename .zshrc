@@ -1,12 +1,11 @@
 # If you come from bash you might have to change your $PATH.
 export GOPATH=~/Code/Go
+export GOPRIVATE=gitlab.com/jobilla
 if [ -f '/Users/leosjoberg/google-cloud-sdk/path.zsh.inc' ]; then source '/Users/leosjoberg/google-cloud-sdk/path.zsh.inc'; fi
 export PATH=~/Library/Python/2.7/bin:~/.composer/vendor/bin:/usr/local/bin:$(go env GOPATH)/bin:/usr/local/opt/gnu-sed/libexec/gnubin:~/.spark:node_modules/.bin:$(brew --prefix php72)/bin:$PATH
 
 # Path to your oh-my-zsh installation.
 export ZSH=/Users/leosjoberg/.oh-my-zsh
-
-export KUBECONFIG=$HOME/.kube/config:$HOME/.kube/breeze-production-kubeconfig.yaml
 
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
@@ -18,6 +17,8 @@ export DEFAULT_USER=`whoami`
 
 SPACESHIP_NODE_SHOW=false
 SPACESHIP_DOCKER_SHOW=false
+SPACESHIP_KUBECONTEXT_SHOW=false
+SPACESHIP_PACKAGE_SHOW=false
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -101,10 +102,15 @@ export PATH="$HOME/.yarn/bin:$PATH"
 export PATH="/usr/local/sbin:$PATH"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
-# The next line enables shell command completion for gcloud.
-if [ -f '/Users/leosjoberg/google-cloud-sdk/completion.zsh.inc' ]; then source '/Users/leosjoberg/google-cloud-sdk/completion.zsh.inc'; fi
-
 eval "$(rbenv init -)"
 export PATH="/usr/local/opt/postgresql@10/bin:$PATH"
 export PATH="$HOME/.rbenv/bin:$PATH
 export PATH="/usr/local/opt/gnu-sed/libexec/gnubin:$PATH""
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/leosjoberg/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/leosjoberg/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/Users/leosjoberg/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/leosjoberg/google-cloud-sdk/completion.zsh.inc'; fi
+
+
