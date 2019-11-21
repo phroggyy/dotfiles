@@ -29,7 +29,7 @@
 	al = "! ga . && gc -m 'temp' && git fix 2"
     wip = "! git commit -am 'WIP' && git push -u origin"
 
-[includeIf "gitdir:~/Code/jobilla"]
+[includeIf "gitdir:~/Code/jobilla/"]
     path = ~/.dotfiles/gitconfig-work
 [url "ssh://git@gitlab.com"]
     insteadOf = https://gitlab.com
