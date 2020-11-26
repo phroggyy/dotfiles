@@ -15,6 +15,7 @@ alias klog="kubectl logs"
 alias kex="kubectl exec -it"
 alias h=helm
 alias cleanup="docker system prune --volumes -f --all && brew update && brew upgrade && brew cleanup"
+alias ip="curl -s ipinfo.io | jq -r '.ip' | pbcopy | pbpaste"
 
 function loc() {
     (find $1 -name $2 -print0 | xargs -0 cat) | wc -l;

@@ -3,6 +3,8 @@ export GOPATH=~/Code/Go
 export GOPRIVATE=gitlab.com/jobilla
 if [ -f '/Users/leosjoberg/google-cloud-sdk/path.zsh.inc' ]; then source '/Users/leosjoberg/google-cloud-sdk/path.zsh.inc'; fi
 export PATH=~/Library/Python/2.7/bin:~/.composer/vendor/bin:/usr/local/bin:$(go env GOPATH)/bin:/usr/local/opt/gnu-sed/libexec/gnubin:~/.spark:node_modules/.bin:$(brew --prefix php72)/bin:$PATH
+export PATH="/usr/local/opt/make/libexec/gnubin:$PATH"
+export PATH="$PATH:$HOME/.npm/bin"
 
 # Path to your oh-my-zsh installation.
 export ZSH=/Users/leosjoberg/.oh-my-zsh
@@ -114,3 +116,12 @@ if [ -f '/Users/leosjoberg/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/leos
 if [ -f '/Users/leosjoberg/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/leosjoberg/google-cloud-sdk/completion.zsh.inc'; fi
 
 
+export PATH="/usr/local/opt/bison/bin:$PATH"
+export PATH="/usr/local/opt/mysql@5.7/bin:$PATH"
+
+export HELM_EXPERIMENTAL_OCI=1
+
+autoload bashcompinit && bashcompinit
+complete -C '/usr/local/bin/aws_completer' aws
+
+. <(flux completion zsh)

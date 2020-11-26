@@ -95,4 +95,7 @@ brew cask install java
 
 # install protobuf compiler
 wget https://github.com/protocolbuffers/protobuf/releases/download/v3.10.1/protoc-3.10.1-osx-x86_64.zip
-unzip protoc-3.10.1-osx-x86_64.zip bin/protoc -d /usr/local
+unzip protoc-3.10.1-osx-x86_64.zip -d /usr/local/protoc
+
+# install Tilt
+curl -fsSL https://raw.githubusercontent.com/windmilleng/tilt/master/scripts/install.sh | bash
