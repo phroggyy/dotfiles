@@ -16,11 +16,6 @@ brew install yarn
 
 yarn global add gtop
 
-# Configure Git
-git config --global user.email "leo.sjoberg@gmail.com"
-git config --global user.name "Leo Sjöberg"
-git config --global push.default current    # This will make sure we automatically create the remote branch without -u for new branches
-
 # Install a reasonable version of sed
 brew install gnu-sed wget tree
 
@@ -52,8 +47,6 @@ brew install koekeishiya/formulae/kwm
 brew services start kwm
 ln -s $DIR/kwm $HOME/.kwm
 
-
-
 # Install nerdbar
 git clone https://github.com/herrbischoff/nerdbar.widget $HOME/Library/Application\ Support/Übersicht/widgets/nerdbar.widget
 
@@ -80,7 +73,6 @@ rm -rf fonts
 
 defaults write com.apple.finder AppleShowAllFiles YES
 defaults write com.apple.finder CreateDesktop false
-
 
 brew install rbenv
 

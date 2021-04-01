@@ -1,0 +1,8 @@
+actions:
+  - action: package.install
+    list:
+      - google-cloud-sdk
+      - civo
+      - doctl
+      - eksctl
+      - aws-sam-cli

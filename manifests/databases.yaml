@@ -1,0 +1,7 @@
+actions:
+  - action: package.install
+    list:
+      - mysql@5.7
+      - redis
+      - sqlite
+      - mongodb-community

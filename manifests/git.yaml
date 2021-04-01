@@ -1,0 +1,6 @@
+actions:
+  - action: file.link
+    to: {{ user.home_dir }}/.gitconfig
+    from: gitconfig-global
+  - action: package.install
+    name: gh

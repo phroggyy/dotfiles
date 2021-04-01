@@ -1,0 +1,8 @@
+actions:
+  - action: package.install
+    list:
+      - kubernetes-cli
+      - helm
+      - kind
+      - telepresence
+      - tilt

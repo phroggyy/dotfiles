@@ -1,0 +1,10 @@
+actions:
+  - action: file.link
+    from: vim/vimrc
+    to: {{ user.home_dir }}/.vimrc
+  - action: file.link
+    from: vim/gvimrc
+    to: {{ user.home_dir }}/.gvimrc
+  - action: file.link
+    from: vim/vim
+    to: {{ user.home_dir }}/vim

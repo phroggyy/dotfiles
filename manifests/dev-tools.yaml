@@ -1,0 +1,12 @@
+actions:
+  - action: package.install
+    list:
+      - yarn
+      - composer
+      - golangci-lint
+      - ngrok
+      - grpcurl
+      - dnsmasq
+      - siege
+    depends:
+      - languages

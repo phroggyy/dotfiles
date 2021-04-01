@@ -1,0 +1,37 @@
+[user]
+	name = Leo Sjöberg
+	email = leo.sjoberg@gmail.com
+[core]
+	quotepath = false
+	excludesfile = /Users/leosjoberg/.dotfiles/gitignore_global
+	editor = /usr/bin/vim
+[push]
+	default = current
+[color]
+    ui = true
+
+[color "status"]
+    changed = blue
+[branch]
+    autosetupmerge = always
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	required = true
+	process = git-lfs filter-process
+[alias]
+	private = config user.email \"leo.sjoberg@gmail.com\"
+    work = config user.email \"leo@jobilla.com\"
+    deca = config user.email \"leo@decahedron.io\"
+    consulting = config user.email \"leo@amplifyconsulting.io\"
+	branch-name = "!git rev-parse --abbrev-ref HEAD"
+	mr = "!sh ~/.dotfiles/git-create-mr.sh"
+	fix = "!f() { GIT_EDITOR=\"sed -i -e '2,/^$/s/^pick/f/'\" git rebase -i HEAD~$1; }; f"
+	al = "! ga . && gc -m 'temp' && git fix 2"
+    wip = "! git commit -am 'WIP' && git push -u origin"
+
+[includeIf "gitdir:~/Code/jobilla/"]
+    path = ~/.dotfiles/gitconfig-work
+[url "ssh://git@gitlab.com"]
+    insteadOf = https://gitlab.com
+

@@ -1,0 +1,17 @@
+actions:
+  - action: package.install
+    list:
+      - git
+      - gnu-sed
+      - wget
+      - tree
+      - bat
+      - jq
+      - yq
+      - tmux
+      - cfssl
+      - coreutils
+      - curl
+      - curl-openssl
+      - sekey
+      - just
