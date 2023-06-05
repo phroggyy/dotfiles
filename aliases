@@ -1,6 +1,6 @@
-alias dc=docker-compose
+alias dc='docker compose'
 alias a='php artisan'
-alias dcr='docker-compose run --rm'
+alias dcr='docker compose run --rm'
 alias dex='docker exec -it'
 alias dnsmasq-restart='sudo launchctl stop homebrew.mxcl.dnsmasq && sudo launchctl start homebrew.mxcl.dnsmasq'
 alias dnsmasq-conf='vim /usr/local/etc/dnsmasq.conf'
@@ -35,3 +35,5 @@ function db() {
 }
 
 uberdir="$HOME/Library/Application\ Support/übersicht/widgets"
+
+alias da="direnv allow"
