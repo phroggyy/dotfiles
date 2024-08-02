@@ -4,6 +4,12 @@ These are my dotfiles. They are sacred to me.
 
 ## Setup
 
+Install Homebrew:
+
+```sh
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+```
+
 Install Comtrya:
 
 ```sh
