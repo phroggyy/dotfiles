@@ -5,9 +5,10 @@
 	quotepath = false
 	excludesfile = /Users/leosjoberg/.dotfiles/gitignore_global
 	editor = /usr/bin/vim
+	ignorecase = false
 [push]
-	default = current
 	autoSetupRemote = true
+	default = current
 [color]
     ui = true
 
@@ -31,3 +32,9 @@
 [url "ssh://git@gitlab.com"]
     insteadOf = https://gitlab.com
 
+[pull]
+	rebase = true
+
+# This next lines include Netlify's Git Credential Helper configuration in your Git configuration.
+[include]
+  path = /Users/leosjoberg/Library/Preferences/netlify/helper/git-config

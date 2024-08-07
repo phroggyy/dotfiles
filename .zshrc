@@ -3,7 +3,8 @@ export GOPATH=~/Code/Go
 export GOPRIVATE=gitlab.com/jobilla
 # if [ -f '/Users/leosjoberg/google-cloud-sdk/path.zsh.inc' ]; then source '/Users/leosjoberg/google-cloud-sdk/path.zsh.inc'; fi
 #
-export PATH=~/Library/Python/2.7/bin:~/.composer/vendor/bin:/usr/local/bin:$(go env GOPATH)/bin:/usr/local/opt/gnu-sed/libexec/gnubin:~/.spark:node_modules/.bin:$PATH
+export PATH="/usr/local/go/bin:$PATH"
+export PATH=~/Library/Python/2.7/bin:~/.composer/vendor/bin:/usr/local/bin:$(go env GOPATH)/bin:/opt/homebrew/opt/gnu-sed/libexec/gnubin:~/.spark:node_modules/.bin:$PATH
 export PATH="/usr/local/opt/make/libexec/gnubin:$PATH"
 export PATH="$PATH:$HOME/.npm/bin"
 export PATH=/Users/leosjoberg/.local/share/ponyup/bin:$PATH

@@ -1,4 +1,4 @@
-actions:
+action:
   - action: file.link
     from: vim/vimrc
     to: {{ user.home_dir }}/.vimrc
@@ -7,4 +7,7 @@ actions:
     to: {{ user.home_dir }}/.gvimrc
   - action: file.link
     from: vim/vim
-    to: {{ user.home_dir }}/vim
+    to: {{ user.home_dir }}/.vim
+  - action: git.clone
+    repository: git@github.com:phroggyy/kickstart.nvim.git
+    directory: {{ user.home_dir }}/.config/nvim

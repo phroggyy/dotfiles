@@ -8,5 +8,12 @@ actions:
       - grpcurl
       - dnsmasq
       - siege
+      - neovim
+      - ripgrep
+      - dagger/tap/dagger
     depends:
       - languages
+  - action: file.link
+    from: tmux.conf
+    to: {{ user.home_dir }}/.tmux.conf
+  
