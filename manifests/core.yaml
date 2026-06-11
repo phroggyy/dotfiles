@@ -13,6 +13,5 @@ actions:
       - coreutils
       - curl
       - curl-openssl
-      - sekey
       - just
       - font-fira-mono-nerd-font

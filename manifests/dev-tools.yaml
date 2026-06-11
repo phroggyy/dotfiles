@@ -1,3 +1,5 @@
+depends:
+  - languages
 actions:
   - action: package.install
     list:
@@ -11,8 +13,6 @@ actions:
       - neovim
       - ripgrep
       - dagger/tap/dagger
-    depends:
-      - languages
   - action: file.link
     from: tmux.conf
     to: {{ user.home_dir }}/.tmux.conf

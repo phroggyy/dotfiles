@@ -4,5 +4,4 @@ actions:
       - kubernetes-cli
       - helm
       - kind
-      - telepresence
       - tilt
