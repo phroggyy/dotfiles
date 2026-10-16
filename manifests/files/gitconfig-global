@@ -38,3 +38,5 @@
 # This next lines include Netlify's Git Credential Helper configuration in your Git configuration.
 [include]
   path = /Users/leosjoberg/Library/Preferences/netlify/helper/git-config
+[init]
+	defaultBranch = main

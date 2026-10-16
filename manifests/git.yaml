@@ -3,4 +3,6 @@ actions:
     to: {{ user.home_dir }}/.gitconfig
     from: gitconfig-global
   - action: package.install
-    name: gh
+    list:
+      - gh
+      - glab

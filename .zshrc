@@ -9,6 +9,7 @@ export PATH="/usr/local/opt/make/libexec/gnubin:$PATH"
 export PATH="$PATH:$HOME/.npm/bin"
 export PATH=/Users/leosjoberg/.local/share/ponyup/bin:$PATH
 export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"
+export PATH="$(npm get prefix -g)/bin:$PATH"
 
 # Path to your oh-my-zsh installation.
 export ZSH=/Users/leosjoberg/.oh-my-zsh
@@ -81,11 +82,11 @@ source ~/.dotfiles/aliases
 # export LANG=en_US.UTF-8
 
 # Preferred editor for local and remote sessions
-# if [[ -n $SSH_CONNECTION ]]; then
-#   export EDITOR='vim'
-# else
-#   export EDITOR='mvim'
-# fi
+if [[ -n $SSH_CONNECTION ]]; then
+  export EDITOR='vim'
+else
+  export EDITOR='code'
+fi
 
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
@@ -133,11 +134,29 @@ export GPG_TTY=$(tty)
 # export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
 gpgconf --launch gpg-agent
 
+eval "$(direnv hook zsh)"
+export CGO_FLAGS="-w"
+
+# bun completions
+[ -s "/Users/leosjoberg/.bun/_bun" ] && source "/Users/leosjoberg/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
+
 # The next line updates PATH for the Google Cloud SDK.
 if [ -f '/Users/leosjoberg/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/leosjoberg/google-cloud-sdk/path.zsh.inc'; fi
 
 # The next line enables shell command completion for gcloud.
 if [ -f '/Users/leosjoberg/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/leosjoberg/google-cloud-sdk/completion.zsh.inc'; fi
+export PATH="$HOME/.local/bin:$PATH"
 
-eval "$(direnv hook zsh)"
-export CGO_FLAGS="-w"
+# pnpm
+export PNPM_HOME="/Users/leosjoberg/Library/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end
+export PATH="/usr/local/opt/libpq/bin:$PATH"
+export PATH="/opt/homebrew/opt/libpq/bin:$PATH"
